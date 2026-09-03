@@ -6,20 +6,27 @@ An AI application for analyzing financial information from Japanese securities r
 
 This project explores an AI-based financial analysis system using large language models (LLMs).
 
-The project starts with a single-agent prototype that extracts the financial section of a securities report and generates a financial analysis using Google Gemini.
+The project starts with a prototype that uses multiple specialized analysis components to analyze different aspects of a company's financial and business information.
 
-The system will be developed into a multi-agent architecture, where multiple specialized agents analyze different aspects of a company's financial and business information.
+The system will be developed into a multi-agent architecture, where multiple specialized agents independently analyze different aspects of a company's financial and business information.
 
 ## Current Status
 
-The current version is a single-agent prototype.
+The prototype currently performs:
 
-The prototype:
+1. Extract financial and business sections from an annual securities report
+2. Generate financial analysis
+3. Generate business and industry analysis
+4. Integrate both analyses for internal credit assessment
+5. Generate a lending decision and monitoring points
 
-1. Reads a PDF securities report
-2. Extracts the financial section
-3. Sends the extracted information to an LLM
-4. Generates a financial analysis
+## Architecture
+
+PDF
+→ Section Extraction
+→ Financial Analysis + Business Analysis
+→ Credit Assessment Orchestration
+→ Lending Decision
 
 ### Project Structure
 
@@ -29,7 +36,9 @@ financial_report_multi_agent/
 ├── prototype/
 │   ├── main.py
 │   ├── pdf_reader.py
-│   └── analyzer.py
+│   ├── analyzer.py
+│   ├── business_analyzer.py
+│   └── orchestration.py
 │
 ├── .gitignore
 └── README.md
