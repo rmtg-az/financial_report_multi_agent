@@ -10,5 +10,4 @@ logs/
 output_json/
 pdf_save/
 test/
-app/
 *.TXT
